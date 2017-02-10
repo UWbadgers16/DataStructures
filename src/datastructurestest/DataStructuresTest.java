@@ -112,9 +112,12 @@ public class DataStructuresTest {
 		binarySearchTree.printBinaryTree(binarySearchTree.getRoot(), 0);
 		
 		try {
-			System.out.println("Found: " + binarySearchTree.getValue(binarySearchTree.search(binarySearchTree.getRoot(), 1)));
+			System.out.println("Found: " + binarySearchTree.getValue(binarySearchTree.search(binarySearchTree.getRoot(), 33)));
 		}catch(NoSuchElementException ex) {
 			System.out.println("Element not in tree");
 		}
+		
+		System.out.println("Minimum: " + binarySearchTree.minimum());
+		System.out.println("Maximum: " + binarySearchTree.maximum());
 	}
 }

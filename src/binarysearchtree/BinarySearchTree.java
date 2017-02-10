@@ -57,4 +57,24 @@ public class BinarySearchTree extends BinaryTree {
 
 		return foundNode;
 	}
+	
+	public int minimum() {
+		TreeNode walker = binaryTree;
+		
+		while(getLeft(walker) != null) {
+			walker = getLeft(walker);
+		}
+		
+		return getValue(walker);
+	}
+	
+	public int maximum() {
+		TreeNode walker = binaryTree;
+		
+		while(getRight(walker) != null) {
+			walker = getRight(walker);
+		}
+		
+		return getValue(walker);
+	}
 }
