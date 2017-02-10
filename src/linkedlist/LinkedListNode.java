@@ -12,19 +12,19 @@ public class LinkedListNode {
 		return value;
 	}
 	
-	public LinkedListNode getNext() {
+	LinkedListNode getNext() {
 		return next;
 	}
 	
-	public void setNext(LinkedListNode node) {
+	void setNext(LinkedListNode node) {
 		next = node;
 	}
 	
-	public LinkedListNode getPrev() {
+	LinkedListNode getPrev() {
 		return prev;
 	}
 	
-	public void setPrev(LinkedListNode node) {
+	void setPrev(LinkedListNode node) {
 		prev = node;
 	}
 }

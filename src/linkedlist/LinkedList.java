@@ -81,9 +81,10 @@ public class LinkedList {
 	}
 
 	public void printLinkedList() {
+		System.out.println("Size: " + count);
+		
 		LinkedListNode walker = head;
 		
-		System.out.println("Elements: " + count);
 		while(walker != null) {
 			System.out.print(walker.getValue() + " ");
 			walker = walker.getNext();
