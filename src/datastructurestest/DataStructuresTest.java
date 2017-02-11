@@ -102,24 +102,35 @@ public class DataStructuresTest {
 	
 	private static void testBinarySearchTree() {
 		System.out.println("TESTING BINARY SEARCH TREE");
-		BinarySearchTree binarySearchTree = new BinarySearchTree(19);
-		binarySearchTree.insert(45);
-		binarySearchTree.insert(87);
-		binarySearchTree.insert(11);
-		binarySearchTree.insert(33);
+		BinarySearchTree binarySearchTree = new BinarySearchTree(15);
+		binarySearchTree.insert(6);
+		binarySearchTree.insert(18);
+		binarySearchTree.insert(3);
+		binarySearchTree.insert(7);
+		binarySearchTree.insert(17);
+		binarySearchTree.insert(20);
+		binarySearchTree.insert(2);
+		binarySearchTree.insert(4);
+		binarySearchTree.insert(13);
+		binarySearchTree.insert(9);
 		
 		System.out.println("Size: " + binarySearchTree.getSize());
 		binarySearchTree.printBinaryTree(binarySearchTree.getRoot(), 0);
 		
 		try {
-			System.out.println("Found: " + binarySearchTree.getValue(binarySearchTree.search(binarySearchTree.getRoot(), 33)));
+			System.out.println("Found: " + binarySearchTree.getValue(binarySearchTree.search(binarySearchTree.getRoot(), 20)));
 		}catch(NoSuchElementException ex) {
 			System.out.println("Element not in tree");
 		}
 		
 		System.out.println("Minimum: " + binarySearchTree.getValue(binarySearchTree.minimum(binarySearchTree.getRoot())));
 		System.out.println("Maximum: " + binarySearchTree.getValue(binarySearchTree.maximum(binarySearchTree.getRoot())));
+		System.out.println("Inorder walk: ");
 		binarySearchTree.inorderWalk(binarySearchTree.getRoot());
-		System.out.println("Successor: " + binarySearchTree.getValue(binarySearchTree.successor(binarySearchTree.getRoot())));
+		System.out.println("Successor: " + binarySearchTree.getValue(binarySearchTree.successor(binarySearchTree.search(binarySearchTree.getRoot(), 9))));
+		System.out.println("Preorder walk: ");
+		binarySearchTree.preorderWalk(binarySearchTree.getRoot());
+		System.out.println("Postorder walk: ");
+		binarySearchTree.postorderWalk(binarySearchTree.getRoot());
 	}
 }

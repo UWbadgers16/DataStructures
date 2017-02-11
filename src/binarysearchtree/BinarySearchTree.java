@@ -89,12 +89,40 @@ public class BinarySearchTree extends BinaryTree {
 		}
 	}
 	
-	public TreeNode successor(TreeNode node) {
-		if(getRight(node) == null) {
-			return null;
+	public void preorderWalk(TreeNode node) {
+		if(node == null) {
+			return;
 		}
 		else {
+			System.out.println(getValue(node));
+			preorderWalk(getLeft(node));
+			preorderWalk(getRight(node));
+		}
+	}
+	
+	public void postorderWalk(TreeNode node) {
+		if(node == null) {
+			return;
+		}
+		else {
+			preorderWalk(getLeft(node));
+			preorderWalk(getRight(node));
+			System.out.println(getValue(node));
+		}
+	}
+	
+	public TreeNode successor(TreeNode node) {
+		if(getRight(node) != null){
 			return minimum(getRight(node));
+		}
+		else {
+			TreeNode walker = node;
+			
+			while(getLeft(getParent(walker)) != walker) {
+				walker = getParent(walker);
+			}
+			
+			return getParent(walker);
 		}
 	}
 }
