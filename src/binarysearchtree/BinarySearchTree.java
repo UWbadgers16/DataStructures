@@ -58,23 +58,43 @@ public class BinarySearchTree extends BinaryTree {
 		return foundNode;
 	}
 	
-	public int minimum() {
-		TreeNode walker = binaryTree;
+	public TreeNode minimum(TreeNode node) {
+		TreeNode walker = node;
 		
 		while(getLeft(walker) != null) {
 			walker = getLeft(walker);
 		}
 		
-		return getValue(walker);
+		return walker;
 	}
 	
-	public int maximum() {
-		TreeNode walker = binaryTree;
+	public TreeNode maximum(TreeNode node) {
+		TreeNode walker = node;
 		
 		while(getRight(walker) != null) {
 			walker = getRight(walker);
 		}
 		
-		return getValue(walker);
+		return walker;
+	}
+	
+	public void inorderWalk(TreeNode node) {
+		if(node == null) {
+			return;
+		}
+		else {
+			inorderWalk(getLeft(node));
+			System.out.println(getValue(node));
+			inorderWalk(getRight(node));
+		}
+	}
+	
+	public TreeNode successor(TreeNode node) {
+		if(getRight(node) == null) {
+			return null;
+		}
+		else {
+			return minimum(getRight(node));
+		}
 	}
 }

@@ -117,7 +117,9 @@ public class DataStructuresTest {
 			System.out.println("Element not in tree");
 		}
 		
-		System.out.println("Minimum: " + binarySearchTree.minimum());
-		System.out.println("Maximum: " + binarySearchTree.maximum());
+		System.out.println("Minimum: " + binarySearchTree.getValue(binarySearchTree.minimum(binarySearchTree.getRoot())));
+		System.out.println("Maximum: " + binarySearchTree.getValue(binarySearchTree.maximum(binarySearchTree.getRoot())));
+		binarySearchTree.inorderWalk(binarySearchTree.getRoot());
+		System.out.println("Successor: " + binarySearchTree.getValue(binarySearchTree.successor(binarySearchTree.getRoot())));
 	}
 }
