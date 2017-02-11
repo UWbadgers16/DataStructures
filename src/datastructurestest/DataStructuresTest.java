@@ -123,14 +123,17 @@ public class DataStructuresTest {
 			System.out.println("Element not in tree");
 		}
 		
-		System.out.println("Minimum: " + binarySearchTree.getValue(binarySearchTree.minimum(binarySearchTree.getRoot())));
-		System.out.println("Maximum: " + binarySearchTree.getValue(binarySearchTree.maximum(binarySearchTree.getRoot())));
-		System.out.println("Inorder walk: ");
-		binarySearchTree.inorderWalk(binarySearchTree.getRoot());
-		System.out.println("Successor: " + binarySearchTree.getValue(binarySearchTree.successor(binarySearchTree.search(binarySearchTree.getRoot(), 9))));
-		System.out.println("Preorder walk: ");
-		binarySearchTree.preorderWalk(binarySearchTree.getRoot());
-		System.out.println("Postorder walk: ");
-		binarySearchTree.postorderWalk(binarySearchTree.getRoot());
+//		System.out.println("Minimum: " + binarySearchTree.getValue(binarySearchTree.minimum(binarySearchTree.getRoot())));
+//		System.out.println("Maximum: " + binarySearchTree.getValue(binarySearchTree.maximum(binarySearchTree.getRoot())));
+//		System.out.println("Inorder walk: ");
+//		binarySearchTree.inorderWalk(binarySearchTree.getRoot());
+//		System.out.println("Successor: " + binarySearchTree.getValue(binarySearchTree.successor(binarySearchTree.search(binarySearchTree.getRoot(), 9))));
+//		System.out.println("Preorder walk: ");
+//		binarySearchTree.preorderWalk(binarySearchTree.getRoot());
+//		System.out.println("Postorder walk: ");
+//		binarySearchTree.postorderWalk(binarySearchTree.getRoot());
+		
+		binarySearchTree.delete(binarySearchTree.search(binarySearchTree.getRoot(), 6));
+		binarySearchTree.printBinaryTree(binarySearchTree.getRoot(), 0);
 	}
 }

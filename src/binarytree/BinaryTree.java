@@ -29,12 +29,24 @@ public class BinaryTree {
 		return node.getParent();
 	}
 	
+	public void setParent(TreeNode node, TreeNode parent) {
+		node.setParent(parent);
+	}
+	
 	public TreeNode getLeft(TreeNode node) {
 		return node.getLeft();
 	}
 	
+	public void setLeft(TreeNode node, TreeNode left) {
+		node.setLeft(left);
+	}
+	
 	public TreeNode getRight(TreeNode node) {
 		return node.getRight();
+	}
+	
+	public void setRight(TreeNode node, TreeNode right) {
+		node.setRight(right);
 	}
 	
 	public int getValue(TreeNode node) {

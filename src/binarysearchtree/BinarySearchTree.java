@@ -36,6 +36,44 @@ public class BinarySearchTree extends BinaryTree {
 		}
 	}
 	
+	public void delete(TreeNode node) {
+		if(getLeft(node) == null) {
+			if(getRight(node) != null) {
+				setParent(getRight(node), getParent(node));
+			}
+			else {
+				replace(node, null);
+			}
+		}
+		else if(getRight(node) == null) {
+			setParent(getLeft(node), getParent(node));
+			replace(node, null);
+		}
+		else {
+			TreeNode minimum = minimum(getRight(node));
+
+			if(minimum == getRight(node)) {
+				setParent(minimum, getParent(node));
+				replace(node, minimum);
+			}
+			else {
+				replace(minimum, getRight(minimum));
+				setParent(minimum, getParent(node));
+			}
+			
+			setLeft(minimum, getLeft(node));
+		}
+	}
+	
+	private void replace(TreeNode node, TreeNode replacement) {
+		if(getLeft(getParent(node)) == node) {
+			setLeft(getParent(node), replacement);
+		}
+		else if(getRight(getParent(node)) == node) {
+			setRight(getParent(node), replacement);
+		}
+	}
+	
 	public TreeNode search(TreeNode root, int value) {
 		TreeNode foundNode = null;
 		
