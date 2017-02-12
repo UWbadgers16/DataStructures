@@ -127,13 +127,28 @@ public class DataStructuresTest {
 //		System.out.println("Maximum: " + binarySearchTree.getValue(binarySearchTree.maximum(binarySearchTree.getRoot())));
 //		System.out.println("Inorder walk: ");
 //		binarySearchTree.inorderWalk(binarySearchTree.getRoot());
-//		System.out.println("Successor: " + binarySearchTree.getValue(binarySearchTree.successor(binarySearchTree.search(binarySearchTree.getRoot(), 9))));
+		
+		TreeNode successor = binarySearchTree.successor(binarySearchTree.search(binarySearchTree.getRoot(), 13));
+		if(successor != null) {
+			System.out.println("Successor: " + binarySearchTree.getValue(successor));
+		}
+		else {
+			System.out.println("No successor");
+		}
 //		System.out.println("Preorder walk: ");
 //		binarySearchTree.preorderWalk(binarySearchTree.getRoot());
 //		System.out.println("Postorder walk: ");
 //		binarySearchTree.postorderWalk(binarySearchTree.getRoot());
-		
-		binarySearchTree.delete(binarySearchTree.search(binarySearchTree.getRoot(), 6));
-		binarySearchTree.printBinaryTree(binarySearchTree.getRoot(), 0);
+//		
+//		binarySearchTree.delete(binarySearchTree.search(binarySearchTree.getRoot(), 6));
+//		binarySearchTree.printBinaryTree(binarySearchTree.getRoot(), 0);
+
+		TreeNode predecessor = binarySearchTree.predecessor(binarySearchTree.search(binarySearchTree.getRoot(), 17));
+		if(predecessor != null) {
+			System.out.println("Predecessor: " + binarySearchTree.getValue(predecessor));
+		}
+		else {
+			System.out.println("No Predecessor");
+		}
 	}
 }

@@ -149,18 +149,35 @@ public class BinarySearchTree extends BinaryTree {
 		}
 	}
 	
+	public TreeNode predecessor(TreeNode node) {
+		if(getLeft(node) != null){
+			return maximum(getLeft(node));
+		}
+		else {
+			TreeNode parent = getParent(node);
+			
+			while((parent != null) && (getRight(parent) != node)) {
+				node = getParent(node);
+				parent = getParent(node);
+			}
+			
+			return parent;
+		}
+	}
+	
 	public TreeNode successor(TreeNode node) {
 		if(getRight(node) != null){
 			return minimum(getRight(node));
 		}
 		else {
-			TreeNode walker = node;
+			TreeNode parent = getParent(node);
 			
-			while(getLeft(getParent(walker)) != walker) {
-				walker = getParent(walker);
+			while((parent != null) && (getLeft(parent) != node)) {
+				node = getParent(node);
+				parent = getParent(node);
 			}
 			
-			return getParent(walker);
+			return parent;
 		}
 	}
 }
